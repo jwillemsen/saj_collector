@@ -1,4 +1,4 @@
 require 'saj_collector/version'
 
-module SajCollector
+module SAJCollector
 end
