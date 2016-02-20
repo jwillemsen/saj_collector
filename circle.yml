@@ -1,0 +1,6 @@
+test:
+  post:
+    - bundle exec rubocop
+machine:
+  ruby:
+    version: 2.2.3
