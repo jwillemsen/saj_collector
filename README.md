@@ -26,6 +26,10 @@ Run the SAJ Collector in a screen or via init of some sort
 
     $ saj_collector
 
+This will run the SAJ Collector and push the data once to PVOutput. You can add
+saj_collector to your crontab or a custom script to let it automatically push with
+a certain frequency.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies.
@@ -42,7 +46,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/jwille
 This project is intended to be a safe, welcoming space for
 collaboration, and contributors are expected to adhere
 to the [Contributor Covenant](contributor-covenant.org) code of conduct.
-
 
 ## License
 
