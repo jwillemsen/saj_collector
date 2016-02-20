@@ -45,7 +45,7 @@ and push the `.gem` file to [rubygems.org](https://rubygems.org).
 Bug reports and pull requests are welcome on GitHub at https://github.com/jwillemsen/saj_collector.
 This project is intended to be a safe, welcoming space for
 collaboration, and contributors are expected to adhere
-to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
