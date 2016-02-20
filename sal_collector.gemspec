@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'jfy_collector/version'
+require 'saj_collector/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'saj_collector'
