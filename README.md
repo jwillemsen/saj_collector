@@ -26,8 +26,19 @@ Run the SAJ Collector in a screen or via init of some sort
 
     $ saj_collector
 
-This will run the SAJ Collector and push the data once to PVOutput. You can add
+This will run the current power generation frm the SAJ Collector and push the
+data once to PVOutput. You can add
 saj_collector to your crontab or a custom script to let it automatically push with
+a certain frequency.
+
+Run the SAJ Output Collector in a screen or via init of some sort
+
+    $ saj_output_collector
+
+This will retrieve the generation of each day of the current month and
+push the data once to PVOutput.
+You can add
+saj_output_collector to your crontab or a custom script to let it automatically push with
 a certain frequency.
 
 ## Development
