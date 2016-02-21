@@ -44,7 +44,7 @@ while counter < days
   doc.elements.each("day_trend/d#{counter}"){
     |e| options[:energy_generated] = (e.text.to_i * 100).to_s
   }
-  puts "Energy generated (#{options[:output_date]}) : #{options[:energy_generated]} kWH"
+  puts "Energy generated (#{options[:output_date]}) : #{options[:energy_generated]} WH"
 
   pvoutput.add_output(
     :output_date => options[:output_date],
