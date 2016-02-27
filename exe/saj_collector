@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require "rexml/document"
+require 'rexml/document'
 require 'net/http'
 require 'pvoutput/client'
 require 'yaml'
@@ -13,15 +13,15 @@ sajcollector_config = YAML::load_file('/etc/saj_collector/saj_collector.yaml')
 pvoutput = PVOutput::Client.new(sajcollector_config[:system_id], sajcollector_config[:api_key])
 
 options = {
-  'temperature' => 0, # Temperature in celcius
+  'temperature'      => 0, # Temperature in celcius
   'energy_generated' => 0, # Energy generation in watt hours
-  'power_generated' => 0, # Power generation in watts
-  'voltage' => 0, # Voltage in volts
-  'amperage' => 0, # Amperage
-  'power_today' => 0,
-  'power_all_time' => 0,
-  'runtime_today' => 0,
-  'runtime_all_time' => 0
+  'power_generated'  => 0, # Power generation in watts
+  'voltage'          => 0, # Voltage in volts
+  'amperage'         => 0, # Amperage
+  'power_today'      => 0,
+  'power_all_time'   => 0,
+  'runtime_today'    => 0,
+  'runtime_all_time' => 0,
 }
 
 # Get the current realtime data from the SAJ device
@@ -31,39 +31,39 @@ c = Net::HTTP.get(sajcollector_config[:saj], '/real_time_data.xml')
 doc = REXML::Document.new c
 
 # Get the temperature
-doc.elements.each("real_time_data/temp"){
+doc.elements.each('real_time_data/temp'){
   |e| options[:temperature] = e.text
 }
 
 # e-today is in kWh where pvoutput is Wh
-doc.elements.each("real_time_data/e-today"){
+doc.elements.each('real_time_data/e-today'){
   |e| options[:energy_generated] = e.text.to_f * 1000
 }
 
 # Get the power generated
-doc.elements.each("real_time_data/p-ac"){
+doc.elements.each('real_time_data/p-ac'){
   |e| options[:power_generated] = e.text
 }
 
 # Get the current amperage
-doc.elements.each("real_time_data/i-grid"){
+doc.elements.each('real_time_data/i-grid'){
   |e| options[:amperage] = e.text
 }
 
 # Get the voltage
-doc.elements.each("real_time_data/v-grid"){
+doc.elements.each('real_time_data/v-grid'){
   |e| options[:voltage] = e.text
 }
-doc.elements.each("real_time_data/e-today"){
+doc.elements.each('real_time_data/e-today'){
   |e| options[:power_today] = e.text
 }
-doc.elements.each("real_time_data/e-total"){
+doc.elements.each('real_time_data/e-total'){
   |e| options[:power_all_time] = e.text
 }
-doc.elements.each("real_time_data/t-today"){
+doc.elements.each('real_time_data/t-today'){
   |e| options[:runtime_today] = e.text
 }
-doc.elements.each("real_time_data/t-total"){
+doc.elements.each('real_time_data/t-total'){
   |e| options[:runtime_all_time] = e.text
 }
 
@@ -85,7 +85,7 @@ puts "  Run Time: #{options[:runtime_all_time]} Hours"
 
 pvoutput.add_status(
   :energy_generated => options[:energy_generated],
-  :power_generated => options[:power_generated],
-  :temperature => options[:temperature],
-  :voltage => options[:voltage],
-  )
+  :power_generated  => options[:power_generated],
+  :temperature      => options[:temperature],
+  :voltage          => options[:voltage]
+)

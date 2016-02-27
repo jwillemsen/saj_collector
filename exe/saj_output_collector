@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require "rexml/document"
+require 'rexml/document'
 require 'net/http'
 require 'pvoutput/client'
 require 'yaml'
@@ -29,7 +29,7 @@ options = {
 }
 
 counter = 0
-current_day = "00"
+current_day = '00"'
 
 while counter < days
   value = {
@@ -48,4 +48,3 @@ options.each do |date, values|
 end
 
 pvoutput.add_batch_output(options)
-
