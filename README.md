@@ -11,7 +11,7 @@ Install it:
 
 ## Usage
 
-Create a config file for PVOutput in ```/etc/saj_collector/saj_collector.yaml```.
+Create a config file for PVOutput in ```saj_collector.yaml```.
 This should contain the IP address of your SAJ Solar Invertor, and your
 PVOutput system id and API key
 

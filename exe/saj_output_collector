@@ -6,7 +6,7 @@ require 'pvoutput/client'
 require 'yaml'
 
 # Load the configuration from the yaml file
-sajcollector_config = YAML::load_file('/etc/saj_collector/saj_collector.yaml')
+sajcollector_config = YAML::load_file('saj_collector.yaml')
 
 # Create a pvoutput with the configured system_id and api_key which both
 # can be obtained from the pvoutput website
