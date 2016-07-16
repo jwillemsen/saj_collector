@@ -28,7 +28,7 @@ Run the SAJ Collector in a screen or via init of some sort
 
 This will run the current power generation frm the SAJ Collector and push the
 data once to PVOutput. You can add
-saj_collector to your crontab or a custom script to let it automatically push with
+``saj_collector`` to your crontab or a custom script to let it automatically push with
 a certain frequency.
 
 Run the SAJ Output Collector in a screen or via init of some sort
@@ -38,8 +38,15 @@ Run the SAJ Output Collector in a screen or via init of some sort
 This will retrieve the generation of each day of the current month and
 push the data once to PVOutput.
 You can add
-saj_output_collector to your crontab or a custom script to let it automatically push with
+``saj_output_collector`` to your crontab or a custom script to let it automatically push with
 a certain frequency.
+
+At the moment you add any of these to your crontab you have to make sure
+that the saj_collector.yaml file can be found. For example when you put the ``saj_collector.yaml`` file
+in /usr/local/bin (and also the gem) and want to run it each 5 minutes between 6AM and 10PM you should
+add to your crontab
+
+    */5 6-22 * * * cd /usr/local/bin && ruby /usr/local/bin/saj_collector
 
 ## Development
 
