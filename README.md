@@ -42,7 +42,7 @@ You can add
 a certain frequency.
 
 At the moment you add any of these to your crontab you have to make sure
-that the saj_collector.yaml file can be found. For example when you put the ``saj_collector.yaml`` file
+that the ``saj_collector.yaml`` file can be found. For example when you put the ``saj_collector.yaml`` file
 in /usr/local/bin (and also the gem) and want to run it each 5 minutes between 6AM and 10PM you should
 add to your crontab
 
