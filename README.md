@@ -46,7 +46,7 @@ that the ``saj_collector.yaml`` file can be found. For example when you put the 
 in /usr/local/bin (and also the gem) and want to run it each 5 minutes between 6AM and 10PM you should
 add to your crontab
 
-    */5 6-22 * * * cd /usr/local/bin && ruby /usr/local/bin/saj_collector
+    */5 6-21 * * * cd /usr/local/bin && ruby /usr/local/bin/saj_collector
 
 ## Development
 
