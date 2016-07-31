@@ -29,7 +29,7 @@ options = {
 }
 
 counter = 0
-current_day = '00"'
+current_day = '00'
 
 while counter < days
   value = {
