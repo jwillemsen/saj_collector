@@ -44,7 +44,7 @@ while counter < days
 end
 
 options.each do |date, values|
-  puts "Energy generated #{date} :#{values[:energy_generated]} WH"
+  puts "Energy generated #{date}: #{values[:energy_generated]} WH"
 end
 
 pvoutput.add_batch_output(options)
