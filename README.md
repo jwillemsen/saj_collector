@@ -1,5 +1,7 @@
 # SAJ Collector
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fdb313b9a4b24614867b91e45a5505f9)](https://www.codacy.com/app/jwillemsen/saj_collector?utm_source=github.com&utm_medium=referral&utm_content=jwillemsen/saj_collector&utm_campaign=badger)
+
 Pull stats from SAJ Solar Inverter and push them to PVOutput. This
 ruby gem is based on https://github.com/johnf/jfy_collector
 
