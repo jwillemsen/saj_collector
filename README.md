@@ -14,14 +14,15 @@ Install it:
 ## Usage
 
 Create a config file for PVOutput in ```saj_collector.yaml```.
-This should contain the IP address of your SAJ Solar Invertor, and your
-PVOutput system id and API key
+This should contain the IP address of your SAJ Solar Invertor (```saj```), your
+PVOutput system id (```system_id```) and API key (```api_key```).
 
 ``` yaml
 ---
 :saj: a.b.c.d
 :system_id: 123456
 :api_key: fb6a2e3
+:day_trend_multiplication_factor: 100
 ```
 
 Run the SAJ Collector in a screen or via init of some sort
@@ -33,15 +34,18 @@ data once to PVOutput. You can add
 ``saj_collector`` to your crontab or a custom script to let it automatically push with
 a certain frequency.
 
+The SAJ Output Collector will retrieve the generation of each day of the current month and
+push the data once to PVOutput.
 Run the SAJ Output Collector in a screen or via init of some sort
 
     $ saj_output_collector
 
-This will retrieve the generation of each day of the current month and
-push the data once to PVOutput.
-You can add
-``saj_output_collector`` to your crontab or a custom script to let it automatically push with
+You can add ``saj_output_collector`` to your crontab or a custom script to let it automatically push with
 a certain frequency.
+
+Some SAJ Solar Inverters provide the generation of each day with a granularity of 0.1kWh and some with
+a granularity of 0.01kWh. In case of the last you have to change the ```day_trend_multiplication_factor```
+within your ```saj_collector.yaml``` to 10.
 
 At the moment you add any of these to your crontab you have to make sure
 that the ``saj_collector.yaml`` file can be found. For example when you put the ``saj_collector.yaml`` file
