@@ -21,7 +21,7 @@ options = {
   'power_today'      => 0,
   'power_all_time'   => 0,
   'runtime_today'    => 0,
-  'runtime_all_time' => 0,
+  'runtime_all_time' => 0
 }
 
 # Get the current realtime data from the SAJ device
@@ -31,40 +31,40 @@ c = Net::HTTP.get(sajcollector_config[:saj], '/real_time_data.xml')
 doc = REXML::Document.new c
 
 # Get the temperature
-doc.elements.each('real_time_data/temp'){
-  |e| options[:temperature] = e.text
+doc.elements.each('real_time_data/temp') { |e|
+  options[:temperature] = e.text
 }
 
 # e-today is in kWh where pvoutput is Wh
-doc.elements.each('real_time_data/e-today'){
-  |e| options[:energy_generated] = e.text.to_f * 1000
+doc.elements.each('real_time_data/e-today') { |e|
+  options[:energy_generated] = e.text.to_f * 1000
 }
 
 # Get the power generated
-doc.elements.each('real_time_data/p-ac'){
-  |e| options[:power_generated] = e.text
+doc.elements.each('real_time_data/p-ac') { |e|
+  options[:power_generated] = e.text
 }
 
 # Get the current amperage
-doc.elements.each('real_time_data/i-grid'){
-  |e| options[:amperage] = e.text
+doc.elements.each('real_time_data/i-grid') { |e|
+  options[:amperage] = e.text
 }
 
 # Get the voltage
-doc.elements.each('real_time_data/v-grid'){
-  |e| options[:voltage] = e.text
+doc.elements.each('real_time_data/v-grid') { |e|
+  options[:voltage] = e.text
 }
-doc.elements.each('real_time_data/e-today'){
-  |e| options[:power_today] = e.text
+doc.elements.each('real_time_data/e-today') { |e|
+  options[:power_today] = e.text
 }
-doc.elements.each('real_time_data/e-total'){
-  |e| options[:power_all_time] = e.text
+doc.elements.each('real_time_data/e-total') { |e|
+  options[:power_all_time] = e.text
 }
-doc.elements.each('real_time_data/t-today'){
-  |e| options[:runtime_today] = e.text
+doc.elements.each('real_time_data/t-today') { |e|
+  options[:runtime_today] = e.text
 }
-doc.elements.each('real_time_data/t-total'){
-  |e| options[:runtime_all_time] = e.text
+doc.elements.each('real_time_data/t-total') { |e|
+  options[:runtime_all_time] = e.text
 }
 
 puts '-------------------------'

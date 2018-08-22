@@ -34,16 +34,17 @@ day_trend_multiplication = 100
 
 # Some SAJ Inverters provide they energy_generated in granularity of 0.1kWh and
 # others in 0.01kWh.
-if !sajcollector_config[:day_trend_multiplication_factor].nil?
-    day_trend_multiplication = sajcollector_config[:day_trend_multiplication_factor].to_i
+unless sajcollector_config[:day_trend_multiplication_factor].nil?
+  day_trend_multiplication = sajcollector_config[:day_trend_multiplication_factor].to_i
 end
 
 while counter < days
   value = {
-    :energy_generated => 0 }
+    :energy_generated => 0
+  }
   # Get the power output of the day,
-  doc.elements.each("day_trend/d#{counter}"){
-    |e| value[:energy_generated] = (e.text.to_i * day_trend_multiplication).to_s
+  doc.elements.each("day_trend/d#{counter}") { |e|
+    value[:energy_generated] = (e.text.to_i * day_trend_multiplication).to_s
   }
   options[:"#{m}#{current_day.next!}"] = value
 
