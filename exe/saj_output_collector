@@ -6,7 +6,7 @@ require 'pvoutput/client'
 require 'yaml'
 
 # Load the configuration from the yaml file
-sajcollector_config = YAML::load_file('saj_collector.yaml')
+sajcollector_config = YAML.load_file('saj_collector.yaml')
 
 # Create a pvoutput with the configured system_id and api_key which both
 # can be obtained from the pvoutput website
@@ -43,9 +43,9 @@ while counter < days
     :energy_generated => 0
   }
   # Get the power output of the day,
-  doc.elements.each("day_trend/d#{counter}") { |e|
+  doc.elements.each("day_trend/d#{counter}") do |e|
     value[:energy_generated] = (e.text.to_i * day_trend_multiplication).to_s
-  }
+  end
   options[:"#{m}#{current_day.next!}"] = value
 
   counter += 1

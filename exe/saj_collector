@@ -6,7 +6,7 @@ require 'pvoutput/client'
 require 'yaml'
 
 # Load the configuration from the yaml file
-sajcollector_config = YAML::load_file('saj_collector.yaml')
+sajcollector_config = YAML.load_file('saj_collector.yaml')
 
 # Create a pvoutput with the configured system_id and api_key which both
 # can be obtained from the pvoutput website
@@ -31,41 +31,41 @@ c = Net::HTTP.get(sajcollector_config[:saj], '/real_time_data.xml')
 doc = REXML::Document.new c
 
 # Get the temperature
-doc.elements.each('real_time_data/temp') { |e|
+doc.elements.each('real_time_data/temp') do |e|
   options[:temperature] = e.text
-}
+end
 
 # e-today is in kWh where pvoutput is Wh
-doc.elements.each('real_time_data/e-today') { |e|
+doc.elements.each('real_time_data/e-today') do |e|
   options[:energy_generated] = e.text.to_f * 1000
-}
+end
 
 # Get the power generated
-doc.elements.each('real_time_data/p-ac') { |e|
+doc.elements.each('real_time_data/p-ac') do |e|
   options[:power_generated] = e.text
-}
+end
 
 # Get the current amperage
-doc.elements.each('real_time_data/i-grid') { |e|
+doc.elements.each('real_time_data/i-grid') do |e|
   options[:amperage] = e.text
-}
+end
 
 # Get the voltage
-doc.elements.each('real_time_data/v-grid') { |e|
+doc.elements.each('real_time_data/v-grid') do |e|
   options[:voltage] = e.text
-}
-doc.elements.each('real_time_data/e-today') { |e|
+end
+doc.elements.each('real_time_data/e-today') do |e|
   options[:power_today] = e.text
-}
-doc.elements.each('real_time_data/e-total') { |e|
+end
+doc.elements.each('real_time_data/e-total') do |e|
   options[:power_all_time] = e.text
-}
-doc.elements.each('real_time_data/t-today') { |e|
+end
+doc.elements.each('real_time_data/t-today') do |e|
   options[:runtime_today] = e.text
-}
-doc.elements.each('real_time_data/t-total') { |e|
+end
+doc.elements.each('real_time_data/t-total') do |e|
   options[:runtime_all_time] = e.text
-}
+end
 
 puts '-------------------------'
 puts
