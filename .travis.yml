@@ -2,7 +2,6 @@ before_install:
 - gem install bundler
 bundler_args: "--verbose"
 script:
-- bundle exec rake test
 - bundle exec rake build
 rvm:
 - 2.0.0
