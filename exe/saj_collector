@@ -84,8 +84,8 @@ puts "  Run Time: #{options[:runtime_today]} Hours"
 puts "  Run Time: #{options[:runtime_all_time]} Hours"
 
 pvoutput.add_status(
-  :energy_generated => options[:energy_generated],
-  :power_generated  => options[:power_generated],
-  :temperature      => options[:temperature],
-  :voltage          => options[:voltage]
+  energy_generated: options[:energy_generated],
+  power_generated: options[:power_generated],
+  temperature: options[:temperature],
+  voltage: options[:voltage]
 )

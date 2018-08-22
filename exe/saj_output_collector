@@ -40,7 +40,7 @@ end
 
 while counter < days
   value = {
-    :energy_generated => 0
+    energy_generated: 0
   }
   # Get the power output of the day,
   doc.elements.each("day_trend/d#{counter}") do |e|
