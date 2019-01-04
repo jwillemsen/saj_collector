@@ -3,7 +3,7 @@ test:
     - bundle exec rubocop
 machine:
   ruby:
-    version: 2.2.3
+    version: 2.6.0
 dependencies:
   pre:
     - gem install bundler --pre
