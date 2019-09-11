@@ -19,9 +19,9 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'pvoutput', '~> 0.4.0'
 
-  spec.add_development_dependency 'bundler', '~> 2.0.2'
-  spec.add_development_dependency 'rake', '~> 10.5'
-  spec.add_development_dependency 'rspec', '~> 3.8.2'
+  spec.add_development_dependency 'bundler'
+  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rubocop', '~> 0.49.0'
-  spec.add_development_dependency 'rubocop-rspec', '~> 0'
+  spec.add_development_dependency 'rubocop-rspec'
 end
