@@ -9,9 +9,11 @@ ruby gem is based on https://github.com/johnf/jfy_collector
 
 ## Installation
 
-Install it:
+First install [ruby](https://www.ruby-lang.org) on your system through your favorite package manager. On Windows download and install ruby from [Rubyinstaller](http://www.rubyinstaller.org).
 
-    $ gem install saj_collector
+Install it by running the following command from a linux shell or windows command prompt
+
+    gem install saj_collector
 
 ## Usage
 
@@ -29,7 +31,7 @@ PVOutput system id (```system_id```) and API key (```api_key```).
 
 Run the SAJ Collector in a screen or via init of some sort
 
-    $ saj_collector
+    saj_collector
 
 This will run the current power generation frm the SAJ Collector and push the
 data once to PVOutput. You can add
@@ -40,7 +42,7 @@ The SAJ Output Collector will retrieve the generation of each day of the current
 push the data once to PVOutput.
 Run the SAJ Output Collector in a screen or via init of some sort
 
-    $ saj_output_collector
+    saj_output_collector
 
 You can add ``saj_output_collector`` to your crontab or a custom script to let it automatically push with
 a certain frequency.
