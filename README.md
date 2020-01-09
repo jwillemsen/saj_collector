@@ -19,7 +19,9 @@ Install it by running the following command from a linux shell or windows comman
 
 Create a config file for PVOutput in ```saj_collector.yaml```.
 This should contain the IP address of your SAJ Solar Invertor (```saj```), your
-PVOutput system id (```system_id```) and API key (```api_key```).
+PVOutput system id (```system_id```) and PVOutput API key (```api_key```). These PVOutput
+system id and API key can be found on your
+[PVOutput account page](https://pvoutput.org/account.jsp).
 
 ``` yaml
 ---
