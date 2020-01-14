@@ -50,8 +50,12 @@ doc.elements.each('real_time_data/i-grid') do |e|
   options[:amperage] = e.text
 end
 
-# Get the voltage
+# Get the voltage for a 1 phase inverter
 doc.elements.each('real_time_data/v-grid') do |e|
+  options[:voltage] = e.text
+end
+# Get the voltage for a 3 phase inverter
+doc.elements.each('real_time_data/Vac_l1') do |e|
   options[:voltage] = e.text
 end
 doc.elements.each('real_time_data/e-today') do |e|
