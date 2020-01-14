@@ -4,6 +4,7 @@ require 'rexml/document'
 require 'net/http'
 require 'pvoutput/client'
 require 'yaml'
+require 'ipaddress'
 
 # Load the configuration from the yaml file
 sajcollector_config = YAML.load_file('saj_collector.yaml')
@@ -11,6 +12,13 @@ sajcollector_config = YAML.load_file('saj_collector.yaml')
 # Create a pvoutput with the configured system_id and api_key which both
 # can be obtained from the pvoutput website
 pvoutput = PVOutput::Client.new(sajcollector_config[:system_id], sajcollector_config[:api_key])
+
+unless IPAddress.valid?(sajcollector_config[:saj])
+  raise ("[#{sajcollector_config[:saj]}] is not a valid IP address")
+end
+
+# Get the current realtime data from the SAJ device
+c = Net::HTTP.get(sajcollector_config[:saj], '/real_time_data.xml')
 
 options = {
   'temperature'      => 0, # Temperature in celcius
@@ -23,9 +31,6 @@ options = {
   'runtime_today'    => 0,
   'runtime_all_time' => 0
 }
-
-# Get the current realtime data from the SAJ device
-c = Net::HTTP.get(sajcollector_config[:saj], '/real_time_data.xml')
 
 # Let REXML parse the XML site
 doc = REXML::Document.new c

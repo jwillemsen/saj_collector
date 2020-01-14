@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
 
   spec.add_dependency 'pvoutput', '~> 0.4.0'
+  spec.add_dependency 'ipaddress'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake', '~> 10.0'
