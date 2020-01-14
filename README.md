@@ -24,7 +24,6 @@ system id and API key can be found on your
 [PVOutput account page](https://pvoutput.org/account.jsp).
 
 ``` yaml
----
 :saj: a.b.c.d
 :system_id: 123456
 :api_key: fb6a2e3
