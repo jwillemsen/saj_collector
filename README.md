@@ -23,6 +23,10 @@ PVOutput system id (```system_id```) and PVOutput API key (```api_key```). These
 system id and API key can be found on your
 [PVOutput account page](https://pvoutput.org/account.jsp).
 
+Some SAJ Solar Inverters provide the generation of each day with a granularity of 0.1kWh and some with
+a granularity of 0.01kWh. In case of the last you have to change the ```day_trend_multiplication_factor```
+within your ```saj_collector.yaml``` to 10.
+
 ``` yaml
 :saj: a.b.c.d
 :system_id: 123456
@@ -30,27 +34,24 @@ system id and API key can be found on your
 :day_trend_multiplication_factor: 100
 ```
 
-Run the SAJ Collector in a screen or via init of some sort
+Run the SAJ Collector from the command prompt or shell
 
     saj_collector
 
 This will run the current power generation frm the SAJ Collector and push the
-data once to PVOutput. You can add
-``saj_collector`` to your crontab or a custom script to let it automatically push with
-a certain frequency.
+data once to PVOutput.
 
 The SAJ Output Collector will retrieve the generation of each day of the current month and
 push the data once to PVOutput.
-Run the SAJ Output Collector in a screen or via init of some sort
+
+Run the SAJ Output Collector from the command prompt or shell
 
     saj_output_collector
 
-You can add ``saj_output_collector`` to your crontab or a custom script to let it automatically push with
-a certain frequency.
+## Scheduling the collecor
 
-Some SAJ Solar Inverters provide the generation of each day with a granularity of 0.1kWh and some with
-a granularity of 0.01kWh. In case of the last you have to change the ```day_trend_multiplication_factor```
-within your ```saj_collector.yaml``` to 10.
+On Linux you can add ``saj_collector`` and ``saj_output_collector`` to your crontab to let it automatically push with
+a certain frequency.
 
 At the moment you add any of these to your crontab you have to make sure
 that the ``saj_collector.yaml`` file can be found. For example when you put the ``saj_collector.yaml`` file
@@ -58,6 +59,9 @@ in /usr/local/bin (and also the gem) and want to run it each 5 minutes between 6
 add to your crontab
 
     */5 6-21 * * * cd /usr/local/bin && ruby /usr/local/bin/saj_collector
+
+On Windows you can create a task using the Task Scheduler. Make sure that for the Action you specific the path
+of the ``saj_collector.yaml`` file as ``Start in``.
 
 ## Development
 
