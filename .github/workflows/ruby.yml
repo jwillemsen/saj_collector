@@ -1,18 +1,39 @@
 name: Ruby
 
-on: [push]
+on:
+  push:
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 7 * * SUN'
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        name: [
+          Ruby24,
+          Ruby25,
+          Ruby26,
+          Ruby27
+        ]
+        include:
+          - name: Ruby24
+            RubyVersion: 2.4
+          - name: Ruby25
+            RubyVersion: 2.5
+          - name: Ruby26
+            RubyVersion: 2.6
+          - name: Ruby27
+            RubyVersion: 2.7
     steps:
     - uses: actions/checkout@v1
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: 2.6.x
+        ruby-version: ${{ matrix.RubyVersion }}
     - name: Build and test with Rake
       run: |
         gem install bundler
