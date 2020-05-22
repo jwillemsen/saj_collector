@@ -25,11 +25,3 @@ addons:
     repo_token: 2b46019558c79326fc3cc87f2e4261610256aee236063c4b62b8ed8d2c2ce21d
 after_success:
 - bundle exec codeclimate-test-reporter
-deploy:
-  provider: rubygems
-  api_key:
-    secure: YnibTFYFBn8XvyocId6wfKm3qCrVOprorIkKHEok4g8AOo3VHea9YxChmp2E/yvVqDdT9G7yKg3hn+JwuolYOIyGVSlS7AXOHguzHLcOI7iYwAd+RWFXDmn1MMFIX/tVV0oeRu8mNGbxNIbofI6DtExH0RHRHN0FTIqxPzH8Se0TbkHzznKkouwu55CU8ss7kh/CYPeFJOEyfCxZ+NNm1cdWocNkMbhPxT2FgsXGRlIMsABc/UpTMUR2mtmGqFUiwnIKvxkhI9qUEePfqHYU/IVGubwUjSE5LJRvOtAOdglj4QH4UZKlI2TJI6kq4a/1q7lZuAnONyqdlROrmBIjm9K9g9l0XvCBeReNpZoXRxIS+78F0H1GSCvxajaRfJYk0Po4RZ6JE2N8hhxSpqyMRHy2mVQiu5fBMXaZXcH7buIgiPY7KH+JFBgyGUqFR8a+8d0kKuX0Fz/sM1YmO2iATtP+CXqSotDWmU4nn8dMoEyvzvHlG5O49ZIlhG+ze6SlryWOlgiewEk8Gf+Nn3q5En1jgxAZTSPy5eyzQdT4RR4dysMy8p1BGCxIXyaKDDZVtk3n+00kG4VMLmrLehfrjalNY6NDAkOEO5Fc1OrQEYXKT/CHlA3R7iaZDqsblRgfpEDYTsXAffMobyggnrrWZRxrJppvITGCFOb6FFvYjKI=
-  gemspec: saj_collector.gemspec
-  on:
-    tags: true
-    repo: jwillemsen/saj_collector
