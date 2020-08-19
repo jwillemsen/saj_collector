@@ -49,7 +49,7 @@ Run the SAJ Output Collector from the command prompt or shell
 
     saj_output_collector
 
-## Scheduling the collecor
+## Scheduling the collector
 
 On Linux you can add ``saj_collector`` and ``saj_output_collector`` to your crontab to let it automatically push with
 a certain frequency.
