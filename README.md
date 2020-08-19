@@ -25,7 +25,8 @@ system id and API key can be found on your
 
 Some SAJ Solar Inverters provide the generation of each day with a granularity of 0.1kWh and some with
 a granularity of 0.01kWh. In case of the last you have to change the ```day_trend_multiplication_factor```
-within your ```saj_collector.yaml``` to 10.
+within your ```saj_collector.yaml``` to 10. An incorrect ```day_trend_multiplication_factor``` triggers
+a `Bad Post` exception when running the `saj_output_collector` script.
 
 ``` yaml
 :saj: a.b.c.d
