@@ -40,10 +40,10 @@ Run the SAJ Collector from the command prompt or shell
     saj_collector
 
 This will run the current power generation frm the SAJ Collector and push the
-data once to PVOutput.
+data to PVOutput.
 
 The SAJ Output Collector will retrieve the generation of each day of the current month and
-push the data once to PVOutput.
+push the data to PVOutput.
 
 Run the SAJ Output Collector from the command prompt or shell
 
