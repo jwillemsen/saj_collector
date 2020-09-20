@@ -16,7 +16,7 @@ sajcollector_config = YAML.load_file(yaml_file)
 pvoutput = PVOutput::Client.new(sajcollector_config[:system_id], sajcollector_config[:api_key])
 
 unless IPAddress.valid?(sajcollector_config[:saj])
-  raise ("[#{sajcollector_config[:saj]}] is not a valid IP address, please correct your #{yaml_file} file")
+  raise("[#{sajcollector_config[:saj]}] is not a valid IP address, please correct your #{yaml_file} file")
 end
 
 # Get the current day trend data from the SAJ device
@@ -59,7 +59,7 @@ while counter < days
 end
 
 options.each do |date, values|
-  energy_generated = values[:energy_generated].to_i/1000.0
+  energy_generated = values[:energy_generated].to_i / 1000.0
   puts "Energy generated #{date}: #{energy_generated} kWh"
 end
 
