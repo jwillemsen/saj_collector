@@ -20,7 +20,7 @@ jobs:
     - name: Set up ruby
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: ${{ matrix.RubyVersion }}
+        ruby-version: ${{ matrix.ruby-version }}
     - name: Install dependencies
       run: |
         gem install bundler
