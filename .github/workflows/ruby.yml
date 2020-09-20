@@ -34,7 +34,6 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.RubyVersion }}
-        bundler-cache: true
     - name: Install dependencies
       run: |
         gem install bundler
