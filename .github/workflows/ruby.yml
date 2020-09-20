@@ -13,21 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        name: [
-          Ruby24,
-          Ruby25,
-          Ruby26,
-          Ruby27
-        ]
-        include:
-          - name: Ruby24
-            RubyVersion: 2.4
-          - name: Ruby25
-            RubyVersion: 2.5
-          - name: Ruby26
-            RubyVersion: 2.6
-          - name: Ruby27
-            RubyVersion: 2.7
+        ruby-version: [ 2.4, 2.5, 2.6, 2.7, ruby-head ]
+    name: ruby ${{ matrix.ruby-version }}
     steps:
     - uses: actions/checkout@v1
     - name: Set up Ruby 2.7
