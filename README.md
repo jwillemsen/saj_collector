@@ -1,6 +1,6 @@
 # SAJ Collector
 
-[![Build Status](https://travis-ci.org/jwillemsen/saj_collector.png)](https://travis-ci.org/jwillemsen/saj_collector)
+[![Actions Status](https://github.com/jwillemsen/saj_collector/workflows/ruby/badge.svg)](https://github.com/jwillemsen/saj_collector/actions)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fdb313b9a4b24614867b91e45a5505f9)](https://www.codacy.com/app/jwillemsen/saj_collector?utm_source=github.com&utm_medium=referral&utm_content=jwillemsen/saj_collector&utm_campaign=badger)
 [![Gem Version](https://badge.fury.io/rb/saj_collector.svg)](https://badge.fury.io/rb/saj_collector)
 
