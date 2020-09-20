@@ -16,7 +16,7 @@ sajcollector_config = YAML.load_file(yaml_file)
 pvoutput = PVOutput::Client.new(sajcollector_config[:system_id], sajcollector_config[:api_key])
 
 unless IPAddress.valid?(sajcollector_config[:saj])
-  raise ("[#{sajcollector_config[:saj]}] is not a valid IP address, please correct your #{yaml_file} file")
+  raise("[#{sajcollector_config[:saj]}] is not a valid IP address, please correct your #{yaml_file} file")
 end
 
 # Get the current realtime data from the SAJ device

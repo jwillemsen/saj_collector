@@ -1,4 +1,4 @@
-name: Ruby
+name: ruby
 
 on:
   push:
@@ -13,29 +13,22 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        name: [
-          Ruby24,
-          Ruby25,
-          Ruby26,
-          Ruby27
-        ]
-        include:
-          - name: Ruby24
-            RubyVersion: 2.4
-          - name: Ruby25
-            RubyVersion: 2.5
-          - name: Ruby26
-            RubyVersion: 2.6
-          - name: Ruby27
-            RubyVersion: 2.7
+        ruby-version: [ 2.4, 2.5, 2.6, 2.7, ruby-head ]
+    name: ruby ${{ matrix.ruby-version }}
     steps:
     - uses: actions/checkout@v1
-    - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
+    - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: ${{ matrix.RubyVersion }}
-    - name: Build and test with Rake
+        ruby-version: ${{ matrix.ruby-version }}
+    - name: Install dependencies
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
+    - name: Lint files
+      run: |
+        bundle exec rubocop
+    - name: Test with Rake
+      run: |
         bundle exec rake
+
+
