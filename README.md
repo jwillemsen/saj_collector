@@ -11,7 +11,7 @@ ruby gem is based on https://github.com/johnf/jfy_collector
 
 First install [ruby](https://www.ruby-lang.org) on your system through your favorite package manager. On Windows download and install ruby from [Rubyinstaller](http://www.rubyinstaller.org).
 
-Install it by running the following command from a linux shell or windows command prompt
+Install saj_collector by running the following command from a linux shell or windows command prompt
 
     gem install saj_collector
 
