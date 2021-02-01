@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Johnny Willemsen']
   spec.email         = ['jwillemsen@remedy.nl']
 
-  spec.summary       = 'Pull stats from SAJ Solar Inverter and push them to PVOutput'
+  spec.summary       = 'Pull statistics from SAJ Solar Inverter and push them to PVOutput'
   spec.homepage      = 'https://github.com/jwillemsen/saj_collector'
   spec.license       = 'MIT'
 
