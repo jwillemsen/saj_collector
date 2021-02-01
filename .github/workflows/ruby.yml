@@ -20,15 +20,12 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby-version }}
+        bundler-cache: true
     - name: Install dependencies
-      run: |
-        gem install bundler
-        bundle install --jobs 4 --retry 3
+      run: bundle install
     - name: Lint files
-      run: |
-        bundle exec rubocop
+      run: bundle exec rubocop
     - name: Test with Rake
-      run: |
-        bundle exec rake
+      run: bundle exec rake
 
 
