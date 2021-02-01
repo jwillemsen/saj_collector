@@ -4,7 +4,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fdb313b9a4b24614867b91e45a5505f9)](https://www.codacy.com/app/jwillemsen/saj_collector?utm_source=github.com&utm_medium=referral&utm_content=jwillemsen/saj_collector&utm_campaign=badger)
 [![Gem Version](https://badge.fury.io/rb/saj_collector.svg)](https://badge.fury.io/rb/saj_collector)
 
-Pull stats from [SAJ Solar Inverter](https://www.saj-electric.com/) and push them to [PVOutput](https://pvoutput.org/). This
+Pull statistics from [SAJ Solar Inverter](https://www.saj-electric.com/) and push them to [PVOutput](https://pvoutput.org/). This
 ruby gem is based on https://github.com/johnf/jfy_collector
 
 ## Installation
