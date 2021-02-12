@@ -37,7 +37,7 @@ options = {
 }
 
 counter = 0
-current_day = '00'
+current_day = 1
 day_trend_multiplication = 100
 
 # Some SAJ Inverters provide they energy_generated in granularity of 0.1kWh and
@@ -54,9 +54,9 @@ while counter < days
   doc.elements.each("day_trend/d#{counter}") do |e|
     value[:energy_generated] = (e.text.to_i * day_trend_multiplication).to_s
   end
-  options[:"#{m}#{current_day.next!}"] = value
-
+  options[:"#{m}#{current_day.to_s.rjust(2, '0')}"] = value
   counter += 1
+  current_day += 1
 end
 
 options.each do |date, values|
