@@ -19,10 +19,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
 
-  spec.required_ruby_version = '>= 2.4'
+  spec.required_ruby_version = '>= 2.5'
 
   spec.add_dependency 'ipaddress'
-  spec.add_dependency 'pvoutput', '>= 0.6'
+  spec.add_dependency 'pvoutput', '>= 1.0'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake', '>= 12.3.3'
