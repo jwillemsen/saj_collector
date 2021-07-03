@@ -28,11 +28,15 @@ a granularity of 0.01kWh. In case of the last you have to change the ```day_tren
 within your ```saj_collector.yaml``` to 10. An incorrect ```day_trend_multiplication_factor``` triggers
 a `Bad Post` exception when running the `saj_output_collector` script.
 
+At the moment you are a [PVOutput donator](https://pvoutput.org/donate.jsp) change ```donation_mode``` to
+true to enable the donation features of PVOutput.
+
 ``` yaml
 :saj: a.b.c.d
 :system_id: 123456
 :api_key: fb6a2e3
 :day_trend_multiplication_factor: 100
+:donation_mode: false
 ```
 
 Run the SAJ Collector from the command prompt or shell
