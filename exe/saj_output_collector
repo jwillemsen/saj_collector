@@ -13,8 +13,11 @@ yaml_file = 'saj_collector.yaml'
 sajcollector_config = YAML.load_file(yaml_file)
 
 # Create a pvoutput with the configured system_id and api_key which both
-# can be obtained from the pvoutput website
-pvoutput = PVOutput::Client.new(sajcollector_config[:system_id], sajcollector_config[:api_key])
+# can be obtained from the pvoutput website. At the moment donation_mode
+# has been specified batching can be used
+pvoutput = PVOutput::Client.new(
+  sajcollector_config[:system_id], sajcollector_config[:api_key], sajcollector_config[:donation_mode]
+)
 
 unless IPAddress.valid?(sajcollector_config[:saj])
   raise("[#{sajcollector_config[:saj]}] is not a valid IP address, please correct your #{yaml_file} file")
