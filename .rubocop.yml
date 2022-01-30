@@ -6,3 +6,6 @@ Layout/LineLength:
 
 Layout/HashAlignment:
   EnforcedColonStyle: table
+
+Gemspec/RequireMFA:
+  Enabled: false
