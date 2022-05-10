@@ -11,3 +11,6 @@ Layout/HashAlignment:
 
 Gemspec/RequireMFA:
   Enabled: false
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false
