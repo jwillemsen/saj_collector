@@ -36,8 +36,7 @@ m = time.strftime('%Y%m')
 
 puts "Number of days until now for this month #{days}"
 
-options = {
-}
+options = {}
 
 counter = 0
 current_day = 1
