@@ -23,10 +23,4 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'ipaddress'
   spec.add_dependency 'pvoutput', '> 1.0'
-
-  spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'rake', '>= 12.3.3'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'rubocop'
-  spec.add_development_dependency 'rubocop-rspec'
 end
